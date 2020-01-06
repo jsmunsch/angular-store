@@ -13,12 +13,12 @@ import { StoreModule } from "./store/store.module";
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
     AppMaterialModule,
     HomeModule,
     ProjectsModule,
-    StoreModule
+    StoreModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

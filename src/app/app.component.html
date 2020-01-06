@@ -5,26 +5,18 @@
     </button>
     <h1>Angular Store</h1>
     <span class="menu-spacer"></span>
-
-
   </mat-toolbar-row>
-
-
 </mat-toolbar>
 <mat-sidenav-container>
   <mat-sidenav #sidenav mode="side">
     <mat-nav-list>
-
       <a mat-list-item [routerLink]="'/accounts'"> Store </a>
       <a mat-list-item [routerLink]="'/create-account'"> Projects </a>
       <a mat-list-item (click)="sidenav.toggle()" mat-list-item>Close</a>
-
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
     <div class="main-content">
-      <app-home></app-home>
-
       <router-outlet></router-outlet>
     </div>
   </mat-sidenav-content>
