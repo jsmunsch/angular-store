@@ -1,11 +1,10 @@
 <section class="store">
-  <mat-card class="item-card">
-    <img center mat-card-image
-      src="https://cyberport.scene7.com/is/image/cyberport/190913115117300701900246T?$Zoom_500$" />
-    <mat-card-title>iPhone 11 Pro</mat-card-title>
-    <mat-card-content>Short description blablabla
+  <mat-card class="item-card" *ngFor="let phone of phones">
+    <img center mat-card-image src={{phone.image_url}} />
+    <mat-card-title>{{phone.title}}</mat-card-title>
+    <mat-card-content>{{phone.description}}
     </mat-card-content>
-    <div class="price">€139,90</div>
+    <div class="price">€{{phone.price}}</div>
     <mat-card-footer>
       <a href="">Zu dem Angebot ></a>
     </mat-card-footer>
