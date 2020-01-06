@@ -48,7 +48,10 @@ mat-card-footer {
 }
 
 .filters {
-  margin-left: 10px;
+  margin-top: 5px;
+  margin-left: 40px;
+  margin-right: 40px;
   display: flex;
-  justify-content: space-evenly
+  justify-content: space-between;
+  overflow-x: scroll;
 }
