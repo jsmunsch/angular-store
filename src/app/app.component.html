@@ -16,13 +16,12 @@
 
       <a mat-list-item [routerLink]="'/accounts'"> Store </a>
       <a mat-list-item [routerLink]="'/create-account'"> Customers </a>
-
-      <a mat-list-item (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
+      <a mat-list-item (click)="sidenav.toggle()" mat-list-item>Close</a>
 
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <div style="height: 88vh;">
+    <div class="main-content">
 
       <router-outlet></router-outlet>
     </div>
