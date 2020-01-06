@@ -6,8 +6,6 @@ import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AppMaterialModule } from "./app-material/app-material.module";
 import { HomeModule } from "./home/home.module";
-import { ProjectsModule } from "./projects/projects.module";
-import { StoreModule } from "./store/store.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,8 +14,6 @@ import { StoreModule } from "./store/store.module";
     BrowserAnimationsModule,
     AppMaterialModule,
     HomeModule,
-    ProjectsModule,
-    StoreModule,
     AppRoutingModule
   ],
   providers: [],
