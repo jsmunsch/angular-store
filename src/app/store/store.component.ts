@@ -49,6 +49,25 @@ export class StoreComponent implements OnInit {
     }
   ];
 
+  filters = [
+    {
+      title: "Brand",
+      options: ["Apple", "Huawei", "Nokia"]
+    },
+    {
+      title: "Color",
+      options: ["red", "black", "white"]
+    },
+    {
+      title: "Display",
+      options: ["mat", "shiny", "super-sparkle"]
+    },
+    {
+      title: "Capacity",
+      options: ["64GB", "128GB", "256GB"]
+    }
+  ];
+
   constructor() {}
 
   ngOnInit() {}

@@ -1,3 +1,10 @@
+<div class="filters">
+  <mat-form-field *ngFor="let filter of filters">
+    <mat-select placeholder={{filter.title}}>
+      <mat-option *ngFor="let option of filter.options" value="option">{{option}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
 <section class="store">
   <mat-card class="item-card" *ngFor="let phone of phones">
     <img center mat-card-image src={{phone.image_url}} />
