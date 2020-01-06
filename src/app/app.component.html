@@ -12,7 +12,7 @@
 
 </mat-toolbar>
 <mat-sidenav-container>
-  <mat-sidenav #sidenav>
+  <mat-sidenav #sidenav mode="side">
     <mat-nav-list>
 
       <a mat-list-item [routerLink]="'/accounts'"> Store </a>
@@ -23,6 +23,7 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <div class="main-content">
+      <app-home></app-home>
 
       <router-outlet></router-outlet>
     </div>
