@@ -18,8 +18,10 @@ export class StoreComponent implements OnInit {
     this.getFilters();
   }
 
-  getPhones(): void {
-    this.phones = this.StoreService.getPhones();
+  getPhones() {
+    this.StoreService.getPhones().subscribe(
+      (result: any) => (this.phones = result)
+    );
   }
 
   getFilters(): void {
