@@ -1,81 +1,25 @@
 import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
 import { Phones } from "./phones";
 import { Filters } from "./filters";
-import { Observable, of } from "rxjs";
+
+const BASE_URL = `http://localhost:3000/`;
 
 @Injectable({
   providedIn: "root"
 })
 export class StoreService {
-  private phones = [
-    {
-      title: "iPhone 11 Pro",
-      price: 139.99,
-      color: "red",
-      brand: "apple",
-      description: "The new iPhone 11",
-      capacity: "128GB",
-      image_url:
-        "https://cyberport.scene7.com/is/image/cyberport/190913115117300701900246T?$Zoom_500$"
-    },
-    {
-      title: "iPhone 11 Pro",
-      price: 139.99,
-      color: "red",
-      brand: "apple",
-      description: "The new iPhone 11",
-      capacity: "128GB",
-      image_url:
-        "https://cyberport.scene7.com/is/image/cyberport/190913115117300701900246T?$Zoom_500$"
-    },
-    {
-      title: "iPhone 11 Pro",
-      price: 139.9,
-      color: "red",
-      brand: "apple",
-      description: "The new iPhone 11",
-      capacity: "128GB",
-      image_url:
-        "https://cyberport.scene7.com/is/image/cyberport/190913115117300701900246T?$Zoom_500$"
-    },
-    {
-      title: "iPhone 11 Pro",
-      price: 139.99,
-      color: "red",
-      brand: "apple",
-      description: "The new iPhone 11",
-      capacity: "128GB",
-      image_url:
-        "https://cyberport.scene7.com/is/image/cyberport/190913115117300701900246T?$Zoom_500$"
-    }
-  ];
+  modelPhones = "phones";
+  modelFilters = "filters";
 
-  private filters = [
-    {
-      title: "Brand",
-      options: ["Apple", "Huawei", "Nokia"]
-    },
-    {
-      title: "Color",
-      options: ["red", "black", "white"]
-    },
-    {
-      title: "Display",
-      options: ["mat", "shiny", "super-sparkle"]
-    },
-    {
-      title: "Capacity",
-      options: ["64GB", "128GB", "256GB"]
-    }
-  ];
+  constructor(private httpClient: HttpClient) {}
 
-  constructor() {}
-
-  getFilters(): Filters[] {
-    return this.filters;
+  getPhones(): Observable<Phones[]> {
+    return this.httpClient.get<Phones[]>(`${BASE_URL}${this.modelPhones}`);
   }
 
-  getPhones(): Phones[] {
-    return this.phones;
+  getFilters(): Observable<Filters[]> {
+    return this.httpClient.get<Filters[]>(`${BASE_URL}${this.modelFilters}`);
   }
 }
