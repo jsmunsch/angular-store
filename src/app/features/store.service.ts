@@ -1,5 +1,8 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
+import { Phones } from "./phones";
+import { Filters } from "./filters";
 
 const BASE_URL = `http://localhost:3000/`;
 
@@ -12,11 +15,11 @@ export class StoreService {
 
   constructor(private httpClient: HttpClient) {}
 
-  getPhones() {
-    return this.httpClient.get(`${BASE_URL}${this.modelPhones}`);
+  getPhones(): Observable<Phones[]> {
+    return this.httpClient.get<Phones[]>(`${BASE_URL}${this.modelPhones}`);
   }
 
-  getFilters() {
-    return this.httpClient.get(`${BASE_URL}${this.modelFilters}`);
+  getFilters(): Observable<Filters[]> {
+    return this.httpClient.get<Filters[]>(`${BASE_URL}${this.modelFilters}`);
   }
 }
