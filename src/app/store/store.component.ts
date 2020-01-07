@@ -1,74 +1,15 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: "app-store",
-  templateUrl: "./store.component.html",
-  styleUrls: ["./store.component.scss"]
+  selector: 'app-store',
+  templateUrl: './store.component.html',
+  styleUrls: ['./store.component.scss']
 })
 export class StoreComponent implements OnInit {
-  phones = [
-    {
-      title: "iPhone 11 Pro",
-      price: 139.99,
-      color: "red",
-      brand: "apple",
-      description: "The new iPhone 11",
-      capacity: "128GB",
-      image_url:
-        "https://cyberport.scene7.com/is/image/cyberport/190913115117300701900246T?$Zoom_500$"
-    },
-    {
-      title: "iPhone 11 Pro",
-      price: 139.99,
-      color: "red",
-      brand: "apple",
-      description: "The new iPhone 11",
-      capacity: "128GB",
-      image_url:
-        "https://cyberport.scene7.com/is/image/cyberport/190913115117300701900246T?$Zoom_500$"
-    },
-    {
-      title: "iPhone 11 Pro",
-      price: 139.9,
-      color: "red",
-      brand: "apple",
-      description: "The new iPhone 11",
-      capacity: "128GB",
-      image_url:
-        "https://cyberport.scene7.com/is/image/cyberport/190913115117300701900246T?$Zoom_500$"
-    },
-    {
-      title: "iPhone 11 Pro",
-      price: 139.99,
-      color: "red",
-      brand: "apple",
-      description: "The new iPhone 11",
-      capacity: "128GB",
-      image_url:
-        "https://cyberport.scene7.com/is/image/cyberport/190913115117300701900246T?$Zoom_500$"
-    }
-  ];
 
-  filters = [
-    {
-      title: "Brand",
-      options: ["Apple", "Huawei", "Nokia"]
-    },
-    {
-      title: "Color",
-      options: ["red", "black", "white"]
-    },
-    {
-      title: "Display",
-      options: ["mat", "shiny", "super-sparkle"]
-    },
-    {
-      title: "Capacity",
-      options: ["64GB", "128GB", "256GB"]
-    }
-  ];
+  constructor() { }
 
-  constructor() {}
+  ngOnInit() {
+  }
 
-  ngOnInit() {}
 }
