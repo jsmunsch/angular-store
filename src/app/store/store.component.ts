@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { StoreService } from "../features/store.service";
+import { Phones } from "../features/phones";
 
 @Component({
   selector: "app-store",
@@ -6,69 +8,21 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./store.component.scss"]
 })
 export class StoreComponent implements OnInit {
-  phones = [
-    {
-      title: "iPhone 11 Pro",
-      price: 139.99,
-      color: "red",
-      brand: "apple",
-      description: "The new iPhone 11",
-      capacity: "128GB",
-      image_url:
-        "https://cyberport.scene7.com/is/image/cyberport/190913115117300701900246T?$Zoom_500$"
-    },
-    {
-      title: "iPhone 11 Pro",
-      price: 139.99,
-      color: "red",
-      brand: "apple",
-      description: "The new iPhone 11",
-      capacity: "128GB",
-      image_url:
-        "https://cyberport.scene7.com/is/image/cyberport/190913115117300701900246T?$Zoom_500$"
-    },
-    {
-      title: "iPhone 11 Pro",
-      price: 139.9,
-      color: "red",
-      brand: "apple",
-      description: "The new iPhone 11",
-      capacity: "128GB",
-      image_url:
-        "https://cyberport.scene7.com/is/image/cyberport/190913115117300701900246T?$Zoom_500$"
-    },
-    {
-      title: "iPhone 11 Pro",
-      price: 139.99,
-      color: "red",
-      brand: "apple",
-      description: "The new iPhone 11",
-      capacity: "128GB",
-      image_url:
-        "https://cyberport.scene7.com/is/image/cyberport/190913115117300701900246T?$Zoom_500$"
-    }
-  ];
+  phones;
+  filters;
 
-  filters = [
-    {
-      title: "Brand",
-      options: ["Apple", "Huawei", "Nokia"]
-    },
-    {
-      title: "Color",
-      options: ["red", "black", "white"]
-    },
-    {
-      title: "Display",
-      options: ["mat", "shiny", "super-sparkle"]
-    },
-    {
-      title: "Capacity",
-      options: ["64GB", "128GB", "256GB"]
-    }
-  ];
+  constructor(private StoreService: StoreService) {}
 
-  constructor() {}
+  ngOnInit() {
+    this.getPhones();
+    this.getFilters();
+  }
 
-  ngOnInit() {}
+  getPhones(): void {
+    this.phones = this.StoreService.getPhones();
+  }
+
+  getFilters(): void {
+    this.filters = this.StoreService.getFilters();
+  }
 }
