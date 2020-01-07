@@ -1,10 +1,11 @@
 import { Injectable } from "@angular/core";
 import { Phones } from "./phones";
+import { Filters } from "./filters";
 
 @Injectable({
   providedIn: "root"
 })
-export class PhonesService {
+export class StoreService {
   private phones = [
     {
       title: "iPhone 11 Pro",
@@ -48,9 +49,32 @@ export class PhonesService {
     }
   ];
 
+  private filters = [
+    {
+      title: "Brand",
+      options: ["Apple", "Huawei", "Nokia"]
+    },
+    {
+      title: "Color",
+      options: ["red", "black", "white"]
+    },
+    {
+      title: "Display",
+      options: ["mat", "shiny", "super-sparkle"]
+    },
+    {
+      title: "Capacity",
+      options: ["64GB", "128GB", "256GB"]
+    }
+  ];
+
   constructor() {}
 
-  all(): Phones[] {
+  getFilters(): Filters[] {
+    return this.filters;
+  }
+
+  getPhones(): Phones[] {
     return this.phones;
   }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { PhonesService } from "../features/phones.service";
+import { StoreService } from "../features/phones.service";
 import { Phones } from "../features/phones";
 
 @Component({
@@ -9,32 +9,20 @@ import { Phones } from "../features/phones";
 })
 export class StoreComponent implements OnInit {
   phones;
-  filters = [
-    {
-      title: "Brand",
-      options: ["Apple", "Huawei", "Nokia"]
-    },
-    {
-      title: "Color",
-      options: ["red", "black", "white"]
-    },
-    {
-      title: "Display",
-      options: ["mat", "shiny", "super-sparkle"]
-    },
-    {
-      title: "Capacity",
-      options: ["64GB", "128GB", "256GB"]
-    }
-  ];
+  filters;
 
-  constructor(private phonesService: PhonesService) {}
+  constructor(private StoreService: StoreService) {}
 
   ngOnInit() {
     this.getPhones();
+    this.getFilters();
   }
 
   getPhones(): void {
-    this.phones = this.phonesService.all();
+    this.phones = this.StoreService.getPhones();
+  }
+
+  getFilters(): void {
+    this.filters = this.StoreService.getFilters();
   }
 }
