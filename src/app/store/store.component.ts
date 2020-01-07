@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { StoreService } from "../features/phones.service";
+import { StoreService } from "../features/store.service";
 import { Phones } from "../features/phones";
 
 @Component({
