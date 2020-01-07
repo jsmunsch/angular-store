@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { PhonesService } from "../features/phones.service";
+import { Phones } from "../features/phones";
 
 @Component({
   selector: "app-store",
@@ -6,49 +8,7 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./store.component.scss"]
 })
 export class StoreComponent implements OnInit {
-  phones = [
-    {
-      title: "iPhone 11 Pro",
-      price: 139.99,
-      color: "red",
-      brand: "apple",
-      description: "The new iPhone 11",
-      capacity: "128GB",
-      image_url:
-        "https://cyberport.scene7.com/is/image/cyberport/190913115117300701900246T?$Zoom_500$"
-    },
-    {
-      title: "iPhone 11 Pro",
-      price: 139.99,
-      color: "red",
-      brand: "apple",
-      description: "The new iPhone 11",
-      capacity: "128GB",
-      image_url:
-        "https://cyberport.scene7.com/is/image/cyberport/190913115117300701900246T?$Zoom_500$"
-    },
-    {
-      title: "iPhone 11 Pro",
-      price: 139.9,
-      color: "red",
-      brand: "apple",
-      description: "The new iPhone 11",
-      capacity: "128GB",
-      image_url:
-        "https://cyberport.scene7.com/is/image/cyberport/190913115117300701900246T?$Zoom_500$"
-    },
-    {
-      title: "iPhone 11 Pro",
-      price: 139.99,
-      color: "red",
-      brand: "apple",
-      description: "The new iPhone 11",
-      capacity: "128GB",
-      image_url:
-        "https://cyberport.scene7.com/is/image/cyberport/190913115117300701900246T?$Zoom_500$"
-    }
-  ];
-
+  phones;
   filters = [
     {
       title: "Brand",
@@ -68,7 +28,13 @@ export class StoreComponent implements OnInit {
     }
   ];
 
-  constructor() {}
+  constructor(private phonesService: PhonesService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getPhones();
+  }
+
+  getPhones(): void {
+    this.phones = this.phonesService.all();
+  }
 }
