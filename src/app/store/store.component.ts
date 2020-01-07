@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { StoreService } from "../features/store.service";
 import { Phones } from "../features/phones";
+import { Filters } from "../features/filters";
+import { Observable } from "rxjs";
 
 @Component({
   selector: "app-store",
@@ -8,8 +10,8 @@ import { Phones } from "../features/phones";
   styleUrls: ["./store.component.scss"]
 })
 export class StoreComponent implements OnInit {
-  phones;
-  filters;
+  phones$: Phones[];
+  filters$: Filters[];
 
   constructor(private StoreService: StoreService) {}
 
@@ -18,11 +20,15 @@ export class StoreComponent implements OnInit {
     this.getFilters();
   }
 
-  getPhones(): void {
-    this.phones = this.StoreService.getPhones();
+  getPhones() {
+    this.StoreService.getPhones().subscribe((result: any) => {
+      this.phones$ = result;
+    });
   }
 
   getFilters(): void {
-    this.filters = this.StoreService.getFilters();
+    this.StoreService.getFilters().subscribe((result: any) => {
+      this.filters$ = result;
+    });
   }
 }
