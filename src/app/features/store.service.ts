@@ -7,7 +7,7 @@ import { Observable, of } from "rxjs";
   providedIn: "root"
 })
 export class StoreService {
-  private phones = [
+  private phones: Phones[] = [
     {
       title: "iPhone 11 Pro",
       price: 139.99,
@@ -50,7 +50,7 @@ export class StoreService {
     }
   ];
 
-  private filters = [
+  private filters: Filters[] = [
     {
       title: "Brand",
       options: ["Apple", "Huawei", "Nokia"]
