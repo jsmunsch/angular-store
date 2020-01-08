@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { ProjectsService } from "../features/projects.service";
 
 @Component({
   selector: "app-projects",
@@ -7,11 +8,20 @@ import { Component, OnInit } from "@angular/core";
 })
 export class ProjectsComponent implements OnInit {
   primaryColor = "red";
+  projects;
   selectedProject;
 
-  constructor() {}
+  constructor(private ProjectsService: ProjectsService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getProjects();
+  }
+
+  getProjects() {
+    this.ProjectsService.all().subscribe((result: any) => {
+      this.projects = result;
+    });
+  }
 
   selectProject(project) {
     this.selectedProject = project;

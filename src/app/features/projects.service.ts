@@ -12,7 +12,7 @@ export class ProjectsService {
   model = "projects";
   constructor(private httpClient: HttpClient) {}
 
-  getProjects(): Observable<Projects> {
+  all(): Observable<Projects> {
     return this.httpClient.get<Projects>(`${BASE_URL}${this.model}`);
   }
 }
