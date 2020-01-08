@@ -8,7 +8,7 @@ import { ProjectsService } from "../features/projects.service";
 })
 export class ProjectsComponent implements OnInit {
   primaryColor = "red";
-  projects;
+  projects$;
   selectedProject;
 
   constructor(private ProjectsService: ProjectsService) {}
@@ -19,7 +19,7 @@ export class ProjectsComponent implements OnInit {
 
   getProjects() {
     this.ProjectsService.all().subscribe((result: any) => {
-      this.projects = result;
+      this.projects$ = result;
     });
   }
 
