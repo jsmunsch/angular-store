@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
+import { Projects } from "./projects";
 
 const BASE_URL = `http://localhost:3000/`;
 
@@ -11,7 +12,7 @@ export class ProjectsService {
   model = "projects";
   constructor(private httpClient: HttpClient) {}
 
-  getProjects(): Observable<any> {
-    return this.httpClient.get<any>(`${BASE_URL}${this.model}`);
+  getProjects(): Observable<Projects> {
+    return this.httpClient.get<Projects>(`${BASE_URL}${this.model}`);
   }
 }
