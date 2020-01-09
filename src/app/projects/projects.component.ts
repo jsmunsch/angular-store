@@ -28,6 +28,10 @@ export class ProjectsComponent implements OnInit {
     this.selectedProject = project;
   }
 
+  saveProject(project) {
+    console.log("SAVING PROJECT", project);
+  }
+
   deleteProject(project) {
     this.ProjectsService.delete(project.id).subscribe(() => this.getProjects());
   }
