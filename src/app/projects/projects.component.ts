@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { ProjectsService } from "../features/projects.service";
 import { ThrowStmt } from "@angular/compiler";
+import { Projects } from "../features/projects";
+import { stringify } from "querystring";
 
 @Component({
   selector: "app-projects",
@@ -10,12 +12,13 @@ import { ThrowStmt } from "@angular/compiler";
 export class ProjectsComponent implements OnInit {
   primaryColor = "red";
   projects$;
-  selectedProject;
+  selectedProject: Projects;
 
   constructor(private ProjectsService: ProjectsService) {}
 
   ngOnInit() {
     this.getProjects();
+    this.resetProject();
   }
 
   getProjects() {
@@ -28,6 +31,17 @@ export class ProjectsComponent implements OnInit {
     this.selectedProject = project;
   }
 
+  resetProject() {
+    const emptyProject: Projects = {
+      id: null,
+      title: "",
+      details: "",
+      percentComplete: 0,
+      approved: false
+    };
+    this.selectProject(emptyProject);
+  }
+
   saveProject(project) {
     console.log("SAVING PROJECT", project);
   }
@@ -38,5 +52,6 @@ export class ProjectsComponent implements OnInit {
 
   cancel() {
     this.selectProject(null);
+    this.resetProject();
   }
 }
