@@ -37,26 +37,40 @@
       "image_url": "https://cyberport.scene7.com/is/image/cyberport/190913115117300701900246T?$Zoom_500$"
     }
   ],
-
   "filters": [
     {
       "title": "Brand",
-      "options": ["Apple", "Huawei", "Nokia"]
+      "options": [
+        "Apple",
+        "Huawei",
+        "Nokia"
+      ]
     },
     {
       "title": "Color",
-      "options": ["red", "black", "white"]
+      "options": [
+        "red",
+        "black",
+        "white"
+      ]
     },
     {
       "title": "Display",
-      "options": ["mat", "shiny", "super-sparkle"]
+      "options": [
+        "mat",
+        "shiny",
+        "super-sparkle"
+      ]
     },
     {
       "title": "Capacity",
-      "options": ["64GB", "128GB", "256GB"]
+      "options": [
+        "64GB",
+        "128GB",
+        "256GB"
+      ]
     }
   ],
-
   "projects": [
     {
       "id": "1",
@@ -69,15 +83,8 @@
       "id": "2",
       "title": "Project Two",
       "details": "This is a sample project",
-      "percentComplete": 40,
+      "percentComplete": 20,
       "approved": false
-    },
-    {
-      "id": "3",
-      "title": "Project Three",
-      "details": "This is a sample project",
-      "percentComplete": 100,
-      "approved": true
     }
   ]
 }

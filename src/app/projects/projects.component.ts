@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ProjectsService } from "../features/projects.service";
+import { ThrowStmt } from "@angular/compiler";
 
 @Component({
   selector: "app-projects",
@@ -25,6 +26,10 @@ export class ProjectsComponent implements OnInit {
 
   selectProject(project) {
     this.selectedProject = project;
+  }
+
+  deleteProject(project) {
+    this.ProjectsService.delete(project.id).subscribe(() => this.getProjects());
   }
 
   cancel() {
