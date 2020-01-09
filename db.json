@@ -40,19 +40,35 @@
   "filters": [
     {
       "title": "Brand",
-      "options": ["Apple", "Huawei", "Nokia"]
+      "options": [
+        "Apple",
+        "Huawei",
+        "Nokia"
+      ]
     },
     {
       "title": "Color",
-      "options": ["red", "black", "white"]
+      "options": [
+        "red",
+        "black",
+        "white"
+      ]
     },
     {
       "title": "Display",
-      "options": ["mat", "shiny", "super-sparkle"]
+      "options": [
+        "mat",
+        "shiny",
+        "super-sparkle"
+      ]
     },
     {
       "title": "Capacity",
-      "options": ["64GB", "128GB", "256GB"]
+      "options": [
+        "64GB",
+        "128GB",
+        "256GB"
+      ]
     }
   ],
   "projects": [
@@ -62,6 +78,20 @@
       "details": "This is a sample project",
       "percentComplete": 20,
       "approved": true
+    },
+    {
+      "id": "t5mm8i2",
+      "title": "This super awesome angular project",
+      "details": "What can I say ? Magnificient",
+      "percentComplete": 42,
+      "approved": true
+    },
+    {
+      "id": "GWEPZeN",
+      "title": "React Project",
+      "details": "This could be your next React Project",
+      "percentComplete": 68,
+      "approved": false
     }
   ]
 }
