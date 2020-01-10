@@ -7,7 +7,11 @@ import { Projects } from "src/app/features/projects";
   styleUrls: ["./project-view.component.scss"]
 })
 export class ProjectViewComponent implements OnInit {
-  @Input() project: Projects;
+  currentProject: Projects;
+  @Input() set project(value) {
+    this.currentProject = Object.assign({}, value);
+  }
+
   @Output() saved = new EventEmitter();
   @Output() cancelled = new EventEmitter();
 

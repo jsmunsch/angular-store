@@ -6,6 +6,7 @@
   </div>
   <!-- PROJECT DETAILS -->
   <div class="col-50">
-    <app-project-view [project]="selectedProject"></app-project-view>
+    <app-project-view [project]="selectedProject" (saved)="saveProject($event)" (cancelled)="cancel($event)">
+    </app-project-view>
   </div>
 </div>
