@@ -14,7 +14,7 @@
           {{project.details}}
         </p>
         <button mat-icon-button>
-          <mat-icon *ngIf="!readonly" (click)="deleted.emit(project);$event.stopImmediatePropagation">close</mat-icon>
+          <mat-icon *ngIf="!readonly" (click)="deleted.emit(project);$event.stopImmediatePropagation()">close</mat-icon>
         </button>
       </mat-list-item>
     </mat-list>
