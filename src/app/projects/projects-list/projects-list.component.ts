@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 import { Projects } from "src/app/features/projects";
 
 @Component({
@@ -8,6 +8,9 @@ import { Projects } from "src/app/features/projects";
 })
 export class ProjectsListComponent implements OnInit {
   @Input() projects: Projects[];
+  @Input() readonly: false;
+  @Output() selected = new EventEmitter();
+  @Output() deleted = new EventEmitter();
 
   constructor() {}
 
